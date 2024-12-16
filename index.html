@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Are You Feeling?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(165deg, #ff7800, #ff2a00);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 90%;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      background: rgba(3, 3, 3, 0.6);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 15px;
+    }
+
+    .button {
+      flex: 1;
+      min-width: 100px;
+      max-width: 120px;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background: rgba(255, 333, 555, 0.2);
+      border: 2px solid white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background: white;
+      color: #cf7500;
+      transform: scale(0.1);
+    }
+
+    .button:active {
+      transform: scale(0.95);
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome</h1>
+    <h2>How are you feeling? 
+      
+    </h2>
+    <div class="buttons"> <a href="https://audiomack.com/chow07/song/central-cee-x-dave?share-user-id=124297448">
+      <button class="button" onclick="playMusic('good')">Good Mood</button>
+    </a>
+      <a href="https://audiomack.com/leostaytrill/song/2s-n-3s-5959671?share-user-id=124297448">
+      <button class="button" onclick="playMusic('sad')">Sad</button>
+      </a>
+      <a href="https://audiomack.com/shallipopi/song/order?share-user-id=124297448">
+      <button class="button" onclick="playMusic('angry')">Angry</button>
+      </a>
+      <a href="https://audiomack.com/leostaytrill/song/pink-lemonade-str8-reload?share-user-id=124297448">
+      <button class="button" onclick="playMusic('depressed')">Depressed</button>
+      </a
+      
+      <h6> Hope the musics help you out
+      </h6>
+        
+      
+      </h5>
+    
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="good" src="good-mood-music.mp3"<a href="" </audio>
+  <audio id="sad" src="sad-mood-music.mp3"></audio>
+  <audio id="angry" src="angry-mood-music.mp3"></audio>
+  <audio id="depressed" src="depressed-mood-music.mp3"></audio>
+
+  <script>
+    // Function to play specific music based on mood
+    function playMusic(mood) {
+      // Stop any playing music
+      const audios = document.querySelectorAll('audio');
+      audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+
+      // Play the selected music
+      const selectedAudio = document.getElementById(mood);
+      if (selectedAudio) {
+        selectedAudio.play();
+      }
+    }
+  </script>
+</body>
+</html>
